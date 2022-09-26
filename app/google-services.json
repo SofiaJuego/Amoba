@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "336551379061",
+    "project_id": "amoba-cd72f",
+    "storage_bucket": "amoba-cd72f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336551379061:android:606cc8df5234ddcc2b383c",
+        "android_client_info": {
+          "package_name": "com.pt.amoba"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336551379061-ff9tgtmqrus19pg4mi3jp1rgugm3a2v0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzp83JBZJZH9ZcLyAXpc4dZcBnV-Bn980"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336551379061-ff9tgtmqrus19pg4mi3jp1rgugm3a2v0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
