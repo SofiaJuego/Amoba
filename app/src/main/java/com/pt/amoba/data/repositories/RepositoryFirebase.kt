@@ -4,29 +4,15 @@ import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
-import com.google.firebase.installations.FirebaseInstallations
 import com.google.firebase.ktx.Firebase
 import com.pt.amoba.data.api.Patients
 import com.pt.amoba.data.api.Response
 import com.pt.amoba.data.api.ResponseLogin
 import com.pt.amoba.data.api.User
 
-
 class RepositoryFirebase(private var repositoryRoom: RepositoryRoom) {
     private var database: DatabaseReference = Firebase.database.reference
-    val keyPatients = "PATIENTS"
-
-    fun registerUser(user: User) {
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(user.email, user.password)
-            .addOnCompleteListener {
-                if (it.isSuccessful) {
-                    Log.e("RESULTADO FIRABASE", "exitoso!")
-                } else {
-                    Log.e("RESULTADO FIRABASE", "fallido!")
-
-                }
-            }
-    }
+    private val keyPatients = "PATIENTS"
 
     fun singIn(user: User, response: ResponseLogin) {
         response.onLoading()
@@ -34,9 +20,9 @@ class RepositoryFirebase(private var repositoryRoom: RepositoryRoom) {
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     saveTokenUser(user)
-                    //saveTokenUser(user)
                     Log.e("RESULTADO FIRABASE", "Logueo exitoso!")
                     response.onSucessfull()
+
                 } else if (it.isCanceled) {
                     response.onError()
                     Log.e("RESULTADO FIRABASE", "Logueo fallido!")
@@ -44,7 +30,6 @@ class RepositoryFirebase(private var repositoryRoom: RepositoryRoom) {
                 } else {
                     response.onError()
                     Log.e("RESULTADO FIRABASE", "Logueo fallido!")
-
                 }
             }
     }
@@ -65,7 +50,7 @@ class RepositoryFirebase(private var repositoryRoom: RepositoryRoom) {
                 if (patients != null) {
                     listAllPatients.add(patients)
                 }
-                response.onSucessfull(listAllPatients)
+                response.onSuccessful(listAllPatients)
             }
         }
     }
@@ -83,9 +68,9 @@ class RepositoryFirebase(private var repositoryRoom: RepositoryRoom) {
         }
     }
 
-    suspend fun verifyTokem(): Boolean {
+    suspend fun verifyToken(): Boolean {
         val sessions = repositoryRoom.getUserLocal()
-        if (!sessions.isNullOrEmpty()) {
+        if (sessions.isNotEmpty()) {
             val userLocal = sessions[0]
             return userLocal.token.isNotBlank()
         }

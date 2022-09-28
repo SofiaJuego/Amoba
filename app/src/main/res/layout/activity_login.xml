@@ -7,20 +7,6 @@
     android:orientation="vertical"
     tools:context=".ui.activity.LoginActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/dimens_20"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/background_card"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
         <ProgressBar
             android:id="@+id/progressBarLogin"
             style="?android:attr/progressBarStyle"
@@ -33,21 +19,21 @@
             app:layout_constraintTop_toBottomOf="@+id/textView_welcome"
             app:layout_constraintVertical_bias="0.22000003" />
 
-        <ImageView
-            android:id="@+id/iv_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimens_79"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="@dimen/dimens_79"
-            android:layout_marginBottom="4dp"
-            android:contentDescription="TODO"
-            android:src="@drawable/icon_amoba"
-            app:layout_constraintBottom_toTopOf="@+id/imageView_login"
-            app:layout_constraintEnd_toEndOf="@+id/imageView_login"
-            app:layout_constraintStart_toStartOf="@+id/imageView_login"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_79"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/dimens_79"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/icon_amoba"
+        app:layout_constraintBottom_toTopOf="@+id/imageView_login"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_login"
+        app:layout_constraintStart_toStartOf="@+id/imageView_login"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/imageView_login"
@@ -162,27 +148,25 @@
             android:textSize="@dimen/tex_size_max_18"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/button_login"
-            app:layout_constraintStart_toStartOf="@+id/button_login"
-            app:layout_constraintTop_toBottomOf="@+id/button_login"
+            app:layout_constraintEnd_toEndOf="@+id/button_view_medical"
+            app:layout_constraintStart_toStartOf="@+id/button_view_medical"
+            app:layout_constraintTop_toBottomOf="@+id/button_view_medical"
             app:layout_constraintVertical_bias="0.0" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="540dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="300dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96107054" />
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

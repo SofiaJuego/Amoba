@@ -1,11 +1,10 @@
-package com.pt.amoba
+package com.pt.amoba.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupActionBarWithNavController
-
+import com.pt.amoba.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,5 +21,4 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
-
 }

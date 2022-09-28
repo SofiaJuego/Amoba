@@ -30,28 +30,25 @@ class PatientsFragment : BaseFragment(), Response {
         binding.bottomLogout.setOnClickListener {
             AlertDialog.Builder(requireContext())
                 .setTitle(getString(R.string.logout))
-                .setMessage("¿Desea cerrar sesión?")
+                .setMessage(getString(R.string.wantTologout))
                 .setCancelable(true)
-                .setNegativeButton("Cancelar") { dialogInterface, d ->
+                .setNegativeButton(getString(R.string.cancel)) { dialogInterface, d ->
                     dialogInterface.cancel()
                 }
-                .setPositiveButton("Salir") { dialogInterface, d ->
+                .setPositiveButton(getString(R.string.exit)) { dialogInterface, d ->
                     viewModel.logout()
                     activity?.finish()
 
                 }.create().show()
-
         }
         return binding.root
     }
 
     override fun onLoading() {
-        //Loading
         showLoadingCase()
-
     }
 
-    override fun onSucessfull(list: ArrayList<Patients>) {
+    override fun onSuccessful(list: ArrayList<Patients>) {
         configListPatients(list)
     }
 
@@ -66,16 +63,12 @@ class PatientsFragment : BaseFragment(), Response {
         binding.recyclerView.adapter = adapter
     }
 
-
     private fun showLoadingCase() {
         binding.apply {
             progressBarPatiens.visibility = View.VISIBLE
             recyclerView.visibility = View.INVISIBLE
-
         }
-
     }
-
 
     private fun onResponseCase() {
         binding.apply {

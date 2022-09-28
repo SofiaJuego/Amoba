@@ -10,20 +10,18 @@ import com.pt.amoba.data.api.User
 @Database(
     entities = [User::class],
     version = 2,
-    exportSchema = false)
+    exportSchema = false
+)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun patientsDao():UserDao
+    abstract fun patientsDao(): UserDao
 
-
-    companion object{
-
+    companion object {
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
         fun getDatabase(context: Context): AppDatabase {
-
-            return INSTANCE?: synchronized(this){
+            return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
@@ -33,20 +31,8 @@ abstract class AppDatabase : RoomDatabase() {
                 instance
             }
 
-
-
-
         }
 
-
-
-
-
-
-
-
     }
-
-
 
 }

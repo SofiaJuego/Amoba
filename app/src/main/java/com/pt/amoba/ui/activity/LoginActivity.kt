@@ -1,14 +1,14 @@
 package com.pt.amoba.ui.activity
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.pt.amoba.MainActivity
+import com.pt.amoba.R
 import com.pt.amoba.data.api.ResponseLogin
 import com.pt.amoba.data.viewmodel.ViewModel
 import com.pt.amoba.databinding.ActivityLoginBinding
@@ -27,11 +27,20 @@ class LoginActivity : AppCompatActivity(), ResponseLogin {
 
         viewModel.mainState.observe(::getLifecycle, ::autoLogin)
 
+        binding.textViewRememberPass.setOnClickListener {
+            AlertDialog.Builder(this)
+                .setTitle(getString(R.string.not_available))
+                .setMessage(getString(R.string.function_to_develop))
+                .setPositiveButton(getString(R.string.ok)) { dialogInterface, d ->
+
+                }.create().show()
+        }
+
         binding.buttonLogin.setOnClickListener {
             if (validEmail()) {
                 loginUser()
             } else {
-                Toast.makeText(this, "Campos invalidos!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.invalid_fields), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -57,7 +66,7 @@ class LoginActivity : AppCompatActivity(), ResponseLogin {
 
     override fun onError() {
         showViews()
-        Toast.makeText(this, "Algo salio mal con firebase", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.an_error_occurred), Toast.LENGTH_SHORT).show()
     }
 
     private fun validEmail(): Boolean {
@@ -66,7 +75,6 @@ class LoginActivity : AppCompatActivity(), ResponseLogin {
         return email.isNotEmpty() && pass.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(email)
             .matches()
     }
-
 
     private fun showLoading() {
         binding.apply {

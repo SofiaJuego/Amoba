@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.navArgs
+import com.pt.amoba.R
 import com.pt.amoba.databinding.FragmentDetailsBinding
 
 class DetailsFragment : BaseFragment() {
@@ -20,27 +22,37 @@ class DetailsFragment : BaseFragment() {
     ): View {
         binding = FragmentDetailsBinding.inflate(layoutInflater, container, false)
 
-        setDatainView()
+        setDetailInView()
+
+        binding.buttonViewMedical.setOnClickListener {
+
+            AlertDialog.Builder(requireContext())
+                .setTitle(getString(R.string.not_available))
+                .setMessage(getString(R.string.function_to_develop))
+                .setPositiveButton(getString(R.string.ok)) { dialogInterface, d ->
+
+                }.create().show()
+        }
 
         binding.imageViewExit.setOnClickListener {
             activity?.onBackPressed()
         }
+
         return binding.root
     }
 
-    //Seteo los datos de detalle
+    //Set date detail
     @SuppressLint("SetTextI18n")
-    private fun setDatainView() {
+    private fun setDetailInView() {
         val nameComplete = detail.data.name + " " + detail.data.surname
-        binding.imageProfile.text = nameComplete.filter { it.isUpperCase() }
 
+        binding.imageProfile.text = nameComplete.filter { it.isUpperCase() }
         binding.tvNamePattient.text = nameComplete
-        binding.textViewCi.text = "C.I.${detail.data.ci}"
+        binding.textViewCi.text = "${getString(R.string.ci)}${detail.data.ci}"
         binding.textViewEmail.text = detail.data.email
-        binding.textViewEdad.text = "${detail.data.age} años"
-        binding.textViewEdad.text = "${detail.data.month} meses"
+        binding.textViewEdad.text = "${detail.data.age} ${getString(R.string.age)}"
+        binding.textViewMonth.text = "${detail.data.month} ${getString(R.string.months)}"
         binding.textViewSexo.text = detail.data.sex
-        binding.textViewEdad.text = "${detail.data.age} años"
         binding.textViewAddress.text = detail.data.address
         binding.titlePhone.text = detail.data.phone.toString()
         binding.titleMobile.text = detail.data.mobile.toString()

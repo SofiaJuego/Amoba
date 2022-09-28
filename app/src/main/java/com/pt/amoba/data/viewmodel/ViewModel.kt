@@ -11,9 +11,7 @@ import com.pt.amoba.data.repositories.RepositoryFirebase
 import com.pt.amoba.data.repositories.RepositoryRoom
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 
 class ViewModel(application: Application) : AndroidViewModel(application) {
@@ -25,7 +23,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     @OptIn(DelicateCoroutinesApi::class)
     fun liveDataSession() {
         GlobalScope.launch {
-            mainState.postValue(repositoryFirebase.verifyTokem())
+            mainState.postValue(repositoryFirebase.verifyToken())
         }
     }
 
@@ -42,8 +40,4 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         repositoryFirebase.getAllPatients(responseRepository)
     }
 
-    fun registerUser(email: String, pass: String) {
-        val user = User(email, pass, "")
-        repositoryFirebase.registerUser(user)
-    }
 }

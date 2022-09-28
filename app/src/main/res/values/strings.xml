@@ -8,13 +8,24 @@
     <string name="login">INICIAR SESIÓN</string>
     <string name="remember_password">¿Olvidaste tu contraseña?</string>
     <string name="patients_name">Nombre de paciente</string>
+    <string name="age">años</string>
+
 
     //Lista de pacientes
     <string name="patients_current">PACIENTES ACTUALES</string>
     <string name="patient_current">Paciente actual</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logout">Cerrar sesión</string>
+    <string name="invalid_fields">Campos invalidos!</string>
+    <string name="an_error_occurred">Ocurrió un error</string>
+    <string name="months">meses</string>
+    <string name="ci">C.I.</string>
+    <string name="wantTologout">¿Desea cerrar sesión?</string>
+    <string name="cancel">Cancelar</string>
+    <string name="exit">Salir</string>
+    <string name="not_available">No disponible</string>
+    <string name="function_to_develop">Función a desarrollar</string>
+    <string name="ok">Ok</string>
 
 
 </resources>
