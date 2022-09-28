@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/patientsFragment">
+
+    <fragment
+        android:id="@+id/patientsFragment"
+        android:name="com.pt.amoba.ui.fragment.PatientsFragment"
+        android:label="fragment_patients_list"
+        tools:layout="@layout/fragment_patients_list">
+
+        <action
+            android:id="@+id/action_patientsFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/from_righ"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_righ" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.pt.amoba.ui.fragment.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="data"
+            app:argType="com.pt.amoba.data.api.Patients" />
+    </fragment>
+
+
+</navigation>

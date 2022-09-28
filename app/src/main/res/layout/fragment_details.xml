@@ -1,14 +1,402 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.DetailsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="858dp"
+            android:padding="@dimen/dimens_20">
+
+            <ImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_20"
+                android:src="@drawable/icon_amoba"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </ImageView>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimens_40"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_profile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/dimens_16"
+                android:layout_marginTop="@dimen/dimens_16"
+                android:background="@drawable/shape_profile"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view">
+
+
+                <TextView
+                    android:id="@+id/imageProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="IC"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimens_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_70"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/ll_profile"
+                app:layout_constraintStart_toEndOf="@+id/ll_profile"
+                app:layout_constraintTop_toTopOf="@+id/ll_profile"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/tv_name_pattient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimens_20"
+                    android:fontFamily="@font/sofiapro"
+                    android:text="Iván Cordero "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tex_size_max_18"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/ll_profile"
+                    app:layout_constraintTop_toTopOf="@+id/ll_profile" />
+
+
+                <TextView
+                    android:id="@+id/tv_pattient_current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimens_20"
+                    android:fontFamily="@font/sofiapro"
+                    android:text="Paciente actual"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_size_14"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageViewExit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/icon_exit"
+                app:layout_constraintBottom_toBottomOf="@+id/ll_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ll_profile" />
+
+            <LinearLayout
+                android:id="@+id/ll_ci_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="53dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/linear_layout"
+                app:layout_constraintStart_toStartOf="@+id/ll_profile"
+                app:layout_constraintTop_toBottomOf="@+id/linear_layout">
+
+                <TextView
+                    android:id="@+id/textView_ci"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sofiapro"
+                    android:gravity="center"
+                    android:text="C.I. 010525436-7"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tex_size_max_18"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimens_16"
+                    android:fontFamily="@font/sofiapro"
+                    android:gravity="center"
+                    android:text="colby.mitchell @gmail.com"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tex_size_max_18"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="60dp"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_ci_email" />
+
+            <LinearLayout
+                android:id="@+id/ll_edad_sexo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_24"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/linear_layout"
+                app:layout_constraintStart_toStartOf="@+id/ll_profile"
+                app:layout_constraintTop_toBottomOf="@+id/view2"
+                app:layout_marginBaseline="20dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView_edad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/sofiapro"
+                        android:text="40 años"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tex_size_max_18"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/sofiapro"
+                        android:text="5 meses"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tex_size_max_18"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView_email1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sofiapro"
+                        android:text="Edad"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_size_14"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="@dimen/dimens_10"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView_sexo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sofiapro"
+                        android:text="Masculino"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tex_size_max_18"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/title_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sofiapro"
+                        android:gravity="center"
+                        android:text="Sexo"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_size_14"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="@dimen/dimens_24"
+                android:layout_marginEnd="100dp"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_edad_sexo" />
+
+            <LinearLayout
+                android:id="@+id/ll_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_24"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/linear_layout"
+                app:layout_constraintStart_toStartOf="@+id/ll_profile"
+                app:layout_constraintTop_toBottomOf="@+id/view3">
+
+                <TextView
+                    android:id="@+id/textView_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sofiapro"
+                    android:gravity="center"
+                    android:text="987 Gusikowski  Inlet Apt. 615"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tex_size_max_18"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/title_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sofiapro"
+                    android:gravity="center"
+                    android:text="Dirección"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/tex_size_max_14"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="@dimen/dimens_24"
+                android:layout_marginEnd="120dp"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_address" />
+
+            <LinearLayout
+                android:id="@+id/ll_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_24"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/linear_layout"
+                app:layout_constraintStart_toStartOf="@+id/ll_profile"
+                app:layout_constraintTop_toBottomOf="@+id/view4">
+
+                <TextView
+                    android:id="@+id/textView_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sofiapro"
+                    android:gravity="center"
+                    android:text="+6436100863112"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tex_size_max_18"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/title_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sofiapro"
+                    android:gravity="center"
+                    android:text="Phone"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_size_14"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_24"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/linear_layout"
+                app:layout_constraintStart_toStartOf="@+id/ll_profile"
+                app:layout_constraintTop_toBottomOf="@+id/ll_phone">
+
+                <TextView
+                    android:id="@+id/textView_number_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sofiapro"
+                    android:gravity="center"
+                    android:text="+8316702194809"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tex_size_max_18"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/title_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sofiapro"
+                    android:gravity="center"
+                    android:text="Mobile"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/tex_size_max_14"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_login"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginStart="@dimen/dimens_29"
+                android:layout_marginTop="@dimen/dimens_36"
+                android:layout_marginEnd="@dimen/dimens_29"
+                android:background="@drawable/shape_botton"
+                android:fontFamily="@font/sofiapro"
+                android:gravity="center"
+                android:text="VER FICHA MÉDICA"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/ll_mobile"
+                app:layout_constraintStart_toStartOf="@+id/ll_mobile"
+                app:layout_constraintTop_toBottomOf="@+id/ll_mobile" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>
