@@ -41,9 +41,9 @@
     <string name="address_static">Dirección</string>
     <string name="phone_number">+6436100863112</string>
     <string name="mobile_number">+8316702194809</string>
-    <string name="mobile">Mobile</string>
+    <string name="mobile">Celular</string>
     <string name="view_medical">VER FICHA MÉDICA</string>
-    <string name="phone">Phone</string>
+    <string name="phone">Teléfono</string>
 
 
 </resources>

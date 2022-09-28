@@ -1,6 +1,5 @@
 package com.pt.amoba.data.repositories
 
-import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
@@ -20,16 +19,11 @@ class RepositoryFirebase(private var repositoryRoom: RepositoryRoom) {
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     saveTokenUser(user)
-                    Log.e("RESULTADO FIRABASE", "Logueo exitoso!")
                     response.onSucessfull()
-
                 } else if (it.isCanceled) {
                     response.onError()
-                    Log.e("RESULTADO FIRABASE", "Logueo fallido!")
-
                 } else {
                     response.onError()
-                    Log.e("RESULTADO FIRABASE", "Logueo fallido!")
                 }
             }
     }

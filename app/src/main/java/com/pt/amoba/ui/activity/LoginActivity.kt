@@ -28,12 +28,7 @@ class LoginActivity : AppCompatActivity(), ResponseLogin {
         viewModel.mainState.observe(::getLifecycle, ::autoLogin)
 
         binding.textViewRememberPass.setOnClickListener {
-            AlertDialog.Builder(this)
-                .setTitle(getString(R.string.not_available))
-                .setMessage(getString(R.string.function_to_develop))
-                .setPositiveButton(getString(R.string.ok)) { dialogInterface, d ->
-
-                }.create().show()
+            showAlertDialogRememberPassword()
         }
 
         binding.buttonLogin.setOnClickListener {
@@ -107,5 +102,14 @@ class LoginActivity : AppCompatActivity(), ResponseLogin {
     private fun goToMain() {
         startActivity(Intent(this, MainActivity::class.java))
         finish()
+    }
+
+    private fun showAlertDialogRememberPassword() {
+        AlertDialog.Builder(this).setTitle(getString(R.string.not_available))
+            .setMessage(getString(R.string.function_to_develop)).setIcon(R.drawable.logo)
+            .setPositiveButton(getString(R.string.ok)) { dialogInterface, d ->
+
+            }.create().show()
+
     }
 }

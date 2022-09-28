@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.navArgs
 import com.pt.amoba.R
 import com.pt.amoba.databinding.FragmentDetailsBinding
@@ -25,13 +24,7 @@ class DetailsFragment : BaseFragment() {
         setDetailInView()
 
         binding.buttonViewMedical.setOnClickListener {
-
-            AlertDialog.Builder(requireContext())
-                .setTitle(getString(R.string.not_available))
-                .setMessage(getString(R.string.function_to_develop))
-                .setPositiveButton(getString(R.string.ok)) { dialogInterface, d ->
-
-                }.create().show()
+            showAlertDialogFunctionToDevelop()
         }
 
         binding.imageViewExit.setOnClickListener {
