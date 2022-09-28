@@ -51,8 +51,8 @@ class LoginActivity : AppCompatActivity(), ResponseLogin {
 
     private fun loginUser() {
         showViews()
-        val email = binding.etEmail.text.toString()
-        val pass = binding.etPassword.text.toString()
+        val email = binding.editTextEmail.text.toString()
+        val pass = binding.editTextPassword.text.toString()
         viewModel.loginUser(email, pass, this)
     }
 
@@ -70,8 +70,8 @@ class LoginActivity : AppCompatActivity(), ResponseLogin {
     }
 
     private fun validEmail(): Boolean {
-        val email = binding.etEmail.text.toString()
-        val pass = binding.etPassword.text.toString()
+        val email = binding.editTextEmail.text.toString()
+        val pass = binding.editTextPassword.text.toString()
         return email.isNotEmpty() && pass.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(email)
             .matches()
     }
@@ -80,8 +80,8 @@ class LoginActivity : AppCompatActivity(), ResponseLogin {
         binding.apply {
             progressBarLogin.visibility = View.VISIBLE
 
-            etEmail.visibility = View.INVISIBLE
-            etPassword.visibility = View.INVISIBLE
+            editTextEmail.visibility = View.INVISIBLE
+            editTextPassword.visibility = View.INVISIBLE
             buttonLogin.visibility = View.INVISIBLE
             textViewRememberPass.visibility = View.INVISIBLE
         }
@@ -91,8 +91,8 @@ class LoginActivity : AppCompatActivity(), ResponseLogin {
         binding.apply {
             progressBarLogin.visibility = View.GONE
 
-            etEmail.visibility = View.VISIBLE
-            etPassword.visibility = View.VISIBLE
+            editTextEmail.visibility = View.VISIBLE
+            editTextPassword.visibility = View.VISIBLE
             buttonLogin.visibility = View.VISIBLE
             textViewRememberPass.visibility = View.VISIBLE
         }

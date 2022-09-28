@@ -29,7 +29,7 @@ class PatientsAdapter(listPatients: ArrayList<Patients>) :
         val nameComplete = "${data.name} ${data.surname}"
         holder.binding.namePatients.text = nameComplete
 
-        holder.binding.imageProfile.text = nameComplete.filter { it.isUpperCase() }
+        holder.binding.initialLettersProfile.text = nameComplete.filter { it.isUpperCase() }
 
         holder.binding.root.setOnClickListener {
 

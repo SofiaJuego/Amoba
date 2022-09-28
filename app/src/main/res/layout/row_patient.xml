@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="90dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="@dimen/dimens_90"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true">
 
     <LinearLayout
-        android:id="@+id/ll_iv"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
+        android:id="@+id/linearLayout_profile"
+        android:layout_width="@dimen/dimens_50"
+        android:layout_height="@dimen/dimens_50"
+        android:layout_marginStart="@dimen/dimens_16"
         android:orientation="horizontal"
         android:background="@drawable/shape_profile"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,64 +19,64 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/imageProfile"
+            android:id="@+id/initial_letters_profile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="IC"
+            android:text="@string/ic"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="@dimen/dimens_24"
+            android:textSize="@dimen/text_size_25"
              />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_lis"
+        android:id="@+id/linearLayout_List"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_toEndOf="@+id/ll_iv"
+        android:layout_marginStart="@dimen/dimens_70"
+        android:layout_toEndOf="@+id/linearLayout_profile"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ll_iv"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout_profile"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/name_patients"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="@dimen/dimens_25"
             android:layout_gravity="top"
-            android:layout_marginBottom="2dp"
-            android:layout_marginStart="14dp"
+            android:layout_marginBottom="@dimen/dimens_2"
+            android:layout_marginStart="@dimen/dimens_14"
             android:fontFamily="@font/sofiapro"
             android:lineSpacingExtra="2sp"
             android:text="@string/patients_name"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="@dimen/tex_size_max_18"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/patients_current"
-            android:layout_width="112dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:layout_marginBottom="2dp"
-            android:layout_marginStart="14dp"
+            android:layout_marginBottom="@dimen/dimens_2"
+            android:layout_marginStart="@dimen/dimens_14"
             android:fontFamily="@font/sofiapro"
             android:lineSpacingExtra="6sp"
             android:text="@string/patient_current"
             android:textColor="@color/blue"
-            android:textSize="14sp"
+            android:textSize="@dimen/text_size_14"
             android:textStyle="bold" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_alignTop="@+id/ll_lis"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/linearLayout_List"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="@dimen/dimens_30"
         android:scaleType="center"
         android:src="@drawable/icon_more"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,14 +87,13 @@
     <View
         android:id="@+id/view"
         android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="@dimen/dimens_1"
+        android:layout_marginTop="@dimen/dimens_40"
         android:background="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
      />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="858dp"
+            android:layout_height="match_parent"
             android:padding="@dimen/dimens_20">
 
             <ImageView
@@ -30,7 +30,7 @@
             <View
                 android:id="@+id/view"
                 android:layout_width="wrap_content"
-                android:layout_height="1dp"
+                android:layout_height="@dimen/dimens_1"
                 android:layout_marginTop="@dimen/dimens_40"
                 android:background="@color/gray"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -39,9 +39,9 @@
 
 
             <LinearLayout
-                android:id="@+id/ll_profile"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/linearLayout_profile"
+                android:layout_width="@dimen/dimens_50"
+                android:layout_height="@dimen/dimens_50"
                 android:layout_marginStart="@dimen/dimens_16"
                 android:layout_marginTop="@dimen/dimens_16"
                 android:background="@drawable/shape_profile"
@@ -51,50 +51,50 @@
 
 
                 <TextView
-                    android:id="@+id/imageProfile"
+                    android:id="@+id/initial_letters_profile"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="IC"
+                    android:text="@string/ic"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/dimens_24"
+                    android:textSize="@dimen/text_size_25"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/view" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linear_layout"
+                android:id="@+id/linear_layout_perfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimens_70"
                 android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="@+id/ll_profile"
-                app:layout_constraintStart_toEndOf="@+id/ll_profile"
-                app:layout_constraintTop_toTopOf="@+id/ll_profile"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout_profile"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout_profile"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout_profile"
                 app:layout_constraintVertical_bias="0.0">
 
                 <TextView
-                    android:id="@+id/tv_name_pattient"
+                    android:id="@+id/textView_name_patient"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dimens_20"
                     android:fontFamily="@font/sofiapro"
-                    android:text="Iván Cordero "
+                    android:text="@string/iv_n_cordero"
                     android:textColor="@color/black"
                     android:textSize="@dimen/tex_size_max_18"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/ll_profile"
-                    app:layout_constraintTop_toTopOf="@+id/ll_profile" />
+                    app:layout_constraintStart_toEndOf="@+id/linearLayout_profile"
+                    app:layout_constraintTop_toTopOf="@+id/linearLayout_profile" />
 
 
                 <TextView
-                    android:id="@+id/tv_pattient_current"
+                    android:id="@+id/textView_patient_current"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dimens_20"
                     android:fontFamily="@font/sofiapro"
-                    android:text="Paciente actual"
+                    android:text="@string/patient_current"
                     android:textColor="@color/blue"
                     android:textSize="@dimen/text_size_14"
                     android:textStyle="bold" />
@@ -105,21 +105,24 @@
                 android:id="@+id/imageViewExit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="@dimen/dimens_20"
                 android:src="@drawable/icon_exit"
-                app:layout_constraintBottom_toBottomOf="@+id/ll_profile"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout_profile"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/ll_profile" />
+                app:layout_constraintTop_toTopOf="@+id/linearLayout_profile"
+                android:focusable="true" />
 
             <LinearLayout
-                android:id="@+id/ll_ci_email"
+                android:id="@+id/linearLayout_ci_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="53dp"
+                android:layout_marginTop="@dimen/dimens_50"
                 android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="@+id/linear_layout"
-                app:layout_constraintStart_toStartOf="@+id/ll_profile"
-                app:layout_constraintTop_toBottomOf="@+id/linear_layout">
+                app:layout_constraintEnd_toEndOf="@+id/linear_layout_perfil"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout_profile"
+                app:layout_constraintTop_toBottomOf="@+id/linear_layout_perfil">
 
                 <TextView
                     android:id="@+id/textView_ci"
@@ -127,7 +130,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sofiapro"
                     android:gravity="center"
-                    android:text="C.I. 010525436-7"
+                    android:text="@string/ci_number"
                     android:textColor="@color/black"
                     android:textSize="@dimen/tex_size_max_18"
                     android:textStyle="bold" />
@@ -136,10 +139,10 @@
                     android:id="@+id/textView_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimens_16"
+                    android:layout_marginTop="@dimen/dimens_15"
                     android:fontFamily="@font/sofiapro"
                     android:gravity="center"
-                    android:text="colby.mitchell @gmail.com"
+                    android:text="@string/colby_mitchell_gmail_com"
                     android:textColor="@color/black"
                     android:textSize="@dimen/tex_size_max_18"
                     android:textStyle="bold" />
@@ -150,29 +153,29 @@
             <View
                 android:id="@+id/view2"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="60dp"
+                android:layout_height="@dimen/dimens_1"
+                android:layout_marginStart="@dimen/dimens_60"
+                android:layout_marginTop="@dimen/dimens_20"
+                android:layout_marginEnd="@dimen/dimens_60"
                 android:background="@color/gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll_ci_email" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout_ci_email" />
 
             <LinearLayout
-                android:id="@+id/ll_edad_sexo"
+                android:id="@+id/linearLayout_age_sex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimens_24"
+                android:layout_marginTop="@dimen/dimens_25"
                 android:gravity="center"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/linear_layout"
-                app:layout_constraintStart_toStartOf="@+id/ll_profile"
+                app:layout_constraintEnd_toEndOf="@+id/linear_layout_perfil"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout_profile"
                 app:layout_constraintTop_toBottomOf="@+id/view2"
-                app:layout_marginBaseline="20dp">
+                app:layout_marginBaseline="@dimen/dimens_20">
 
                 <LinearLayout
-                    android:id="@+id/ll_age"
+                    android:id="@+id/linearLayout_age"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -180,12 +183,12 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView_edad"
+                        android:id="@+id/textView_age"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="@dimen/dimens_5"
                         android:fontFamily="@font/sofiapro"
-                        android:text="40 años"
+                        android:text="@string/_40_a_os"
                         android:textColor="@color/black"
                         android:textSize="@dimen/tex_size_max_18"
                         android:textStyle="bold" />
@@ -194,19 +197,19 @@
                         android:id="@+id/textView_month"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="@dimen/dimens_5"
                         android:fontFamily="@font/sofiapro"
-                        android:text="5 meses"
+                        android:text="@string/_5_meses"
                         android:textColor="@color/black"
                         android:textSize="@dimen/tex_size_max_18"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView_email1"
+                        android:id="@+id/textView_age_static"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/sofiapro"
-                        android:text="Edad"
+                        android:text="@string/age_static"
                         android:textColor="@color/blue"
                         android:textSize="@dimen/text_size_14"
                         android:textStyle="bold" />
@@ -214,32 +217,32 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/ll_sex"
+                    android:id="@+id/linearLayout_sex"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="@dimen/dimens_20"
                     android:layout_marginTop="@dimen/dimens_10"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView_sexo"
+                        android:id="@+id/textView_sex"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/sofiapro"
-                        android:text="Masculino"
+                        android:text="@string/male"
                         android:textColor="@color/black"
                         android:textSize="@dimen/tex_size_max_18"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/title_sex"
+                        android:id="@+id/textView_sex_static"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/sofiapro"
                         android:gravity="center"
-                        android:text="Sexo"
+                        android:text="@string/sex"
                         android:textColor="@color/blue"
                         android:textSize="@dimen/text_size_14"
                         android:textStyle="bold" />
@@ -252,23 +255,23 @@
             <View
                 android:id="@+id/view3"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="100dp"
+                android:layout_height="@dimen/dimens_1"
+                android:layout_marginStart="@dimen/dimens_100"
                 android:layout_marginTop="@dimen/dimens_24"
-                android:layout_marginEnd="100dp"
+                android:layout_marginEnd="@dimen/dimens_100"
                 android:background="@color/gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll_edad_sexo" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout_age_sex" />
 
             <LinearLayout
-                android:id="@+id/ll_address"
+                android:id="@+id/linearLayout_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimens_24"
                 android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="@+id/linear_layout"
-                app:layout_constraintStart_toStartOf="@+id/ll_profile"
+                app:layout_constraintEnd_toEndOf="@+id/linear_layout_perfil"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout_profile"
                 app:layout_constraintTop_toBottomOf="@+id/view3">
 
                 <TextView
@@ -277,20 +280,20 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sofiapro"
                     android:gravity="center"
-                    android:text="987 Gusikowski  Inlet Apt. 615"
+                    android:text="@string/address"
                     android:textColor="@color/black"
                     android:textSize="@dimen/tex_size_max_18"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/title_address"
+                    android:id="@+id/textView_address_static"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sofiapro"
                     android:gravity="center"
-                    android:text="Dirección"
+                    android:text="@string/address_static"
                     android:textColor="@color/blue"
-                    android:textSize="@dimen/tex_size_max_14"
+                    android:textSize="@dimen/text_size_14"
                     android:textStyle="bold" />
 
 
@@ -299,43 +302,43 @@
             <View
                 android:id="@+id/view4"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="120dp"
+                android:layout_height="@dimen/dimens_1"
+                android:layout_marginStart="@dimen/dimens_120"
                 android:layout_marginTop="@dimen/dimens_24"
-                android:layout_marginEnd="120dp"
+                android:layout_marginEnd="@dimen/dimens_120"
                 android:background="@color/gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll_address" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout_address" />
 
             <LinearLayout
-                android:id="@+id/ll_phone"
+                android:id="@+id/linearLayout_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimens_24"
                 android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="@+id/linear_layout"
-                app:layout_constraintStart_toStartOf="@+id/ll_profile"
+                app:layout_constraintEnd_toEndOf="@+id/linear_layout_perfil"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout_profile"
                 app:layout_constraintTop_toBottomOf="@+id/view4">
 
                 <TextView
-                    android:id="@+id/textView_number"
+                    android:id="@+id/textView_number_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sofiapro"
                     android:gravity="center"
-                    android:text="+6436100863112"
+                    android:text="@string/phone_number"
                     android:textColor="@color/black"
                     android:textSize="@dimen/tex_size_max_18"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/title_phone"
+                    android:id="@+id/textView_phone_static"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sofiapro"
                     android:gravity="center"
-                    android:text="Phone"
+                    android:text="@string/phone"
                     android:textColor="@color/blue"
                     android:textSize="@dimen/text_size_14"
                     android:textStyle="bold" />
@@ -345,14 +348,14 @@
 
 
             <LinearLayout
-                android:id="@+id/ll_mobile"
+                android:id="@+id/linearLayout_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimens_24"
                 android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="@+id/linear_layout"
-                app:layout_constraintStart_toStartOf="@+id/ll_profile"
-                app:layout_constraintTop_toBottomOf="@+id/ll_phone">
+                app:layout_constraintEnd_toEndOf="@+id/linear_layout_perfil"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout_profile"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout_phone">
 
                 <TextView
                     android:id="@+id/textView_number_mobile"
@@ -360,39 +363,42 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sofiapro"
                     android:gravity="center"
-                    android:text="+8316702194809"
+                    android:text="@string/mobile_number"
                     android:textColor="@color/black"
                     android:textSize="@dimen/tex_size_max_18"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/title_mobile"
+                    android:id="@+id/textView_mobile_static"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sofiapro"
                     android:gravity="center"
-                    android:text="Mobile"
+                    android:text="@string/mobile"
                     android:textColor="@color/blue"
-                    android:textSize="@dimen/tex_size_max_14"
+                    android:textSize="@dimen/text_size_14"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/button_view_medical"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="@dimen/dimens_50"
                 android:layout_marginStart="@dimen/dimens_29"
                 android:layout_marginTop="@dimen/dimens_36"
                 android:layout_marginEnd="@dimen/dimens_29"
-                android:background="@drawable/shape_botton"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:background="@drawable/shape_bottom"
                 android:fontFamily="@font/sofiapro"
                 android:gravity="center"
-                android:text="VER FICHA MÉDICA"
-                android:textSize="20sp"
+                android:text="@string/view_medical"
+                android:textSize="@dimen/text_size_20"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/ll_mobile"
-                app:layout_constraintStart_toStartOf="@+id/ll_mobile"
-                app:layout_constraintTop_toBottomOf="@+id/ll_mobile" />
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout_mobile"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout_mobile"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout_mobile"
+                android:focusable="true" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

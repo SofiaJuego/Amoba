@@ -46,15 +46,15 @@ class DetailsFragment : BaseFragment() {
     private fun setDetailInView() {
         val nameComplete = detail.data.name + " " + detail.data.surname
 
-        binding.imageProfile.text = nameComplete.filter { it.isUpperCase() }
-        binding.tvNamePattient.text = nameComplete
+        binding.initialLettersProfile.text = nameComplete.filter { it.isUpperCase() }
+        binding.textViewNamePatient.text = nameComplete
         binding.textViewCi.text = "${getString(R.string.ci)}${detail.data.ci}"
         binding.textViewEmail.text = detail.data.email
-        binding.textViewEdad.text = "${detail.data.age} ${getString(R.string.age)}"
+        binding.textViewAge.text = "${detail.data.age} ${getString(R.string.age)}"
         binding.textViewMonth.text = "${detail.data.month} ${getString(R.string.months)}"
-        binding.textViewSexo.text = detail.data.sex
+        binding.textViewSex.text = detail.data.sex
         binding.textViewAddress.text = detail.data.address
-        binding.titlePhone.text = detail.data.phone.toString()
-        binding.titleMobile.text = detail.data.mobile.toString()
+        binding.textViewNumberPhone.text = detail.data.phone.toString()
+        binding.textViewNumberMobile.text = detail.data.mobile.toString()
     }
 }

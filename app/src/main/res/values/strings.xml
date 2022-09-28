@@ -12,7 +12,7 @@
 
 
     //Lista de pacientes
-    <string name="patients_current">PACIENTES ACTUALES</string>
+    <string name="patients_current_fragment">PACIENTES ACTUALES</string>
     <string name="patient_current">Paciente actual</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logout">Cerrar sesión</string>
@@ -26,6 +26,24 @@
     <string name="not_available">No disponible</string>
     <string name="function_to_develop">Función a desarrollar</string>
     <string name="ok">Ok</string>
+    <string name="todo">TODO</string>
+    <string name="ic">IC</string>
+    <string name="iv_n_cordero">Iván Cordero</string>
+
+    <string name="ci_number">C.I. 010525436-7</string>
+    <string name="colby_mitchell_gmail_com">colby.mitchell @gmail.com</string>
+    <string name="_40_a_os">40 años</string>
+    <string name="_5_meses">5 meses</string>
+    <string name="age_static">Edad</string>
+    <string name="male">Masculino</string>
+    <string name="sex">Sexo</string>
+    <string name="address">987 Gusikowski Inlet Apt. 615</string>
+    <string name="address_static">Dirección</string>
+    <string name="phone_number">+6436100863112</string>
+    <string name="mobile_number">+8316702194809</string>
+    <string name="mobile">Mobile</string>
+    <string name="view_medical">VER FICHA MÉDICA</string>
+    <string name="phone">Phone</string>
 
 
 </resources>
